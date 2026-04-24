@@ -38,3 +38,32 @@
 // const x= 10
 // x= x+1
 // In this one, it will  probably display and error or won't return any value because I used the variable of const, meaning the value(10) can't change.
+
+
+// Declaration   
+// This means telling the program a variable exists and  giving it a value. (F4 Mathematics books)
+// It's declared using LET and CONST.
+// e.g let score;
+// e.g  const score;(note that this is an error because const has to be initialized immediatley)
+
+// Assignment
+// This means to give a value to our variable that we have declared.
+// We use an = sign to assign.
+// e.g let score = 10;
+
+
+// Initialization 
+// This means declaring and assinging a value at the same time.
+// This is the correct way when using CONST.
+// e.g const score= 10;
+
+
+
+// Reassignment
+// This means reassigning the value given to a variable. 
+// Only works with LET.
+// let score= 10;
+// score = 20; (This is the reassignment. Cant work with CONST  because the values of CONST don't change.)
+
+// const  score= 10;
+// score = 20;(Error)
