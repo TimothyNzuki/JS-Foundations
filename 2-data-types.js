@@ -38,3 +38,23 @@
 // e.g. let notAssigned;
 
 
+// Second type ofdata is called Primitive Data.
+// The ones I haveunderstood is this seection is: Arrys and Objrcts.
+
+
+// Arrays.
+// This is when a variable is given more than one value.
+// Thevalues given can be of the same type, or different type ofdata.
+// Mainly arrays are used when you want an ordered list of items. Also in looping it's used.
+// e.g. let fruits = ["apples" "bananas" "oranges"]
+// The starting value is given the number 0. 
+// console.log(fruits.[0]) this prints apples.
+
+
+//Objects.
+// This is used when respresenting one thing that has key things under that main thing.
+// e.g. let person={name; "timo", age: 22, town: "nai"}
+// ?Here you can refer to one single thing by its vaLue.
+// note that this is not really dependable if you  need alist.
+//  Really dependable when you waant to target a specific property in an entity. 
+// consol.log(user.city); prints "nai"
