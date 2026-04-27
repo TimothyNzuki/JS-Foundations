@@ -1,3 +1,6 @@
+// A varible is a storage location int the computer memory- RAM where data is stored.
+
+
 // To explain what a variable is, i will use an example of a library. In a school library there are a lot o books with different titles and for difeferent classes. 
 // In order to find a form 4 mathematics textbook, you will have to to the box named form 4 mathematics textbooks. The textbooks are inside the box and after locating the box or shelve, now you can take out whatever amount of  F4 mathematics text books that you need.
 // So the name of the box or shelve (F4 mathematics books) is a variable which does not change unless changed. 
@@ -49,7 +52,7 @@
 // Assignment
 // This means to give a value to our variable that we have declared.
 // We use an = sign to assign.
-// e.g let score = 10;
+// e.g score = 10;
 
 
 // Initialization 
@@ -66,4 +69,4 @@
 // score = 20; (This is the reassignment. Cant work with CONST  because the values of CONST don't change.)
 
 // const  score= 10;
-// score = 20;(Error)
+// score = 20;(Error2)
