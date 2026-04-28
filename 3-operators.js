@@ -30,11 +30,11 @@
 
 // Logical Operation.
 // 1. Short circuiting.
-// && This is the And. It returns the first value if it false, otherwise it returns true.
-// || Or . This returns the value if it is true, else it returns the second value.
+// && This is the And. It returns the first value if it false, otherwise it returns the second.
+// || Or . This returns the first value if it is true, otherwise it returns the second value.
 // 
 
-// Non-Boolean Values.
+// 2.Non-Boolean Values.
 // Falsy values - 0, Nan(not a number), null, undefined ,false
 // All others are truthy.
 
