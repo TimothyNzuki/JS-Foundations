@@ -50,3 +50,21 @@ function greetings(name){
 
 console.log (greetings("timo"))
 console.log (greetings("myles"))
+
+function logGreeting(name){
+    console.log(`Hello ${name}`);
+
+}
+
+function calculateTotalPrice(price, quantity = 1){
+    return `Buying ${quantity} items at ${price} each gives a total of: ${quantity * price}`;
+}
+
+console.log("The product of price and quantity is: " + calculateTotalPrice(200 , 5));
+console.log(calculateTotalPrice(200));
+
+// Using arrow function:
+const calcTotalPrice = (price , quantity=1) => `Buying ${quantity} items at ${price} each give total of : ${price * quantity}`;
+
+console.log(calcTotalPrice(300,4))
+console.log(calcTotalPrice(300))
