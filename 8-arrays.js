@@ -49,3 +49,46 @@ console.log(fruits);
 // You can also  find  the lenght of an array using the length property.
 
 console.log(`The number of fruits in the array is: ${fruits.length}`);
+
+// Loops  and Arrays
+// You can use loops to iterate over the elements in ana array and perform operations on them.
+
+// Example.
+
+let foods = ["Pizza", "Burger", "Pasta", "Sushi", "Tacos"];
+
+for (let p = 0; p < foods.length; p++) {
+  console.log("I love " + (p + 1) + ":" + foods[p]);
+}
+
+let drinks = ["Coke", "Pepsi", "Fanta", "Sprite", "7up"];
+let index = 0;
+
+while (index < drinks.length) {
+  console.log(`I like ${drinks[index]}`);
+  index++;
+}
+
+/*📝 Exercise for You
+Create an array of 5 student names.
+
+Use a for loop to print each name with its position (e.g., "Student 1: Alice").
+
+Use a for...of loop to print "Welcome, [name]!" for each student.
+
+Use the length property to print the total number of students in the array.
+*/
+
+// ----- 🏁 SOLUTIONS -----
+
+let students = ["Collins", "Myles", "Sheilla", "Lillian", "Brennan"];
+
+for (let s = 0; s < students.length; s++) {
+  console.log("Student " + (s + 1) + ":" + students[s]);
+}
+
+for (let student of students) {
+  console.log(`Welcome, ${student}!`);
+}
+
+console.log(`The totalnumber of students in the array is: ${students.length}`);

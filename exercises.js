@@ -127,3 +127,74 @@ console.log(calculateParkingFee(1));
 console.log(calculateParkingFee(2));
 console.log(calculateParkingFee(3));
 console.log(calculateParkingFee(5));
+
+/*2. Student Grade Processing System
+   A school wants to automate grading. Write a function that:
+   - Accepts an array of student scores
+   - Uses a loop to:
+     - Assign grades: 70+ → A, 60–69 → B, 50–59 → C, Below 50 → Fail
+   - Returns a summary:
+     - Total students
+     - Number of passes and fails*/
+
+let scores = [85, 72, 68, 45, 90, 55, 30];
+
+function studentScore(scores) {
+  let totalStudents = scores.length;
+  let passes = 0;
+  let fails = 0;
+
+  for (let z = 0; z < scores.length; z++) {
+    let score = scores[z];
+    let Grade;
+
+    if (score >= 70) {
+      Grade = "A";
+      passes++;
+    } else if (score >= 60) {
+      Grade = "B";
+      passes++;
+    } else if (score >= 50) {
+      Grade = "C";
+      passes++;
+    } else {
+      Grade = "Fail";
+      fails++;
+    }
+
+    console.log(`Student ${z + 1}: Score = ${score}, Grade = ${Grade}`);
+  }
+  return `Total students: ${totalStudents}, Passes: ${passes}, Fails: ${fails}`;
+}
+console.log(studentScore(scores));
+
+let summary = studentScore(scores);
+console.log(summary);
+
+/*3. Supermarket Discount Calculator
+   A supermarket applies discounts based on total purchase. Write a function that:
+   - Takes an array of item prices
+   - Calculates total cost using a loop
+   - Applies:
+     - 10% discount if total > 5000
+     - 5% discount if total > 2000
+   - Returns final payable amount*/
+
+let itemPrices = [1000, 2500, 800, 500, 5000];
+
+function calculateFinalAmount(prices) {
+  let totalCost = 0;
+
+  for (let y = 0; y < prices.length; y++) {
+    totalCost += prices[y];
+  }
+
+  if (totalCost > 5000) {
+    totalCost = totalCost - totalCost * 0.1;
+  } else if (totalCost > 2000) {
+    totalCost = totalCost - totalCost * 0.05;
+  }
+  return `The final payable amount after discount is KES  ${totalCost}.`;
+}
+
+console.log(calculateFinalAmount(itemPrices));
