@@ -50,3 +50,27 @@ do {
   console.log(`Step ${stepCount}`);
   stepCount++;
 } while (stepCount <= 5);
+
+for (let q = 2; q <= 10; q += 2) {
+  console.log(`The even number is ${q}`);
+}
+
+let count = 5;
+while (count > 0) {
+  console.log(`Countdown from ${count}`);
+  count--;
+}
+
+let num = 10;
+do {
+  console.log("Hello");
+  num++;
+} while (num < 13);
+
+let count1 = 5;
+do {
+  console.log("Counting down: " + count1);
+  count1--;
+} while (count1 > 0);
+
+console.log("Blast off!");
