@@ -198,3 +198,199 @@ function calculateFinalAmount(prices) {
 }
 
 console.log(calculateFinalAmount(itemPrices));
+
+/*- ride object: distance, baseFare, perKmRate, isPeakTime  
+- driver object: isAvailable, rating
+
+Calculate total fare (apply surge if peak time).  
+Determine if driver should accept the ride only if:  
+- Driver is available  
+- Rating is above a threshold  
+- Distance is within an acceptable range*/
+
+let ride = {
+  distance: 10,
+  busfare: 200,
+  perKmRate: 20,
+  IsPeakTime: true,
+};
+
+let driver = {
+  isAvailable: true,
+  rating: 4.7,
+};
+
+function calcutlateTotalFare(ride) {
+  let totalFare = ride.busfare + ride.distance * ride.perKmRate;
+
+  if (ride.isPeakTime) {
+    totalFare *= 1.5;
+  }
+
+  return totalFare;
+}
+
+function shouldDriverAcceptRide(driver, ride) {
+  let maxDistance = 20;
+  let ratingThreshold = 4.5;
+
+  if (
+    driver.isAvailable &&
+    driver.rating >= ratingThreshold &&
+    ride.distance <= maxDistance
+  ) {
+    return "Driver should accept  the ride.";
+  } else {
+    return "Driver should not accept the ride.";
+  }
+}
+
+let totalFare = calcutlateTotalFare(ride);
+console.log(`The total fare for the rode is KES ${totalFare}.`);
+
+console.log(shouldDriverAcceptRide(driver, ride));
+
+/*You are given:  
+- account object: balance, isActive  
+- transaction object: amount, type
+
+Determine if a withdrawal should go through only if:  
+- Account is active  
+- Balance is sufficient  
+- Amount is within a daily limit  
+
+Also update the balance accordingly.*/
+
+let account = {
+  balance: 500,
+  isActive: true,
+};
+
+let transaction = {
+  amount: 300,
+  type: "withdrawal",
+};
+
+function determineWithdrawal(account, transaction) {
+  let maxLimit = 400;
+
+  if (
+    account.isActive &&
+    transaction.amount <= account.balance &&
+    transaction.amount <= maxLimit
+  ) {
+    return `Withdrawal of KES ${transaction.amount} is successful. Remaining balance is KES ${account.balance - transaction.amount}.`;
+  } else {
+    return `Transaction not successful.  Please check your account status and try again.`;
+  }
+}
+
+console.log(determineWithdrawal(account, transaction));
+
+/*
+You are given an array of products, each with:  
+stock, minStockLevel, isDiscontinued
+
+Identify which products need restocking only if:  
+- Stock is below minimum  
+- Product is not discontinued*/
+
+let Products = [
+  { stock: 10, minStockLevel: 20, isDiscontinued: false, name: "Laptops" },
+  {
+    stock: 15,
+    minStockLevel: 50,
+    isDiscontinued: true,
+    name: "Phones",
+  },
+  {
+    stock: 50,
+    minStockLevel: 100,
+    isDiscontinued: false,
+    name: "Earphones",
+  },
+  {
+    stock: 5,
+    minStockLevel: 15,
+    isDiscontinued: false,
+    name: "Keyboards",
+  },
+];
+
+function productsToRestock(Products) {
+  let restockList = [];
+
+  for (let pr = 0; pr < Products.length; pr++) {
+    let product = Products[pr];
+
+    if (product.stock < product.minStockLevel && !product.isDiscontinued) {
+      restockList.push(product.name);
+    }
+  }
+  return restockList;
+}
+
+console.log(
+  `Products that need restocking are: ${productsToRestock(Products).join(", ")}`,
+);
+
+/*You are given:  
+- An array of attendees  
+- Each attendee has: hasTicket, hasID, age
+
+Determine who is allowed entry if:  
+- They have a ticket  
+- AND (they are above required age OR have special permission)*/
+
+let attendees = [
+  {
+    name: "Davies",
+    age: 20,
+    hasTicket: true,
+    hasId: true,
+    hasSpecialPermission: false,
+  },
+
+  {
+    name: "Janelle",
+    age: 17,
+    hasTicket: true,
+    hasId: true,
+    hasSpecialPermission: true,
+  },
+
+  {
+    name: "Terril",
+    age: 17,
+    hasTicket: true,
+    hasId: true,
+    hasSpecialPermission: false,
+  },
+
+  {
+    name: "Brennan",
+    age: 21,
+    hasTicket: true,
+    hasId: true,
+    hasSpecialPermission: true,
+  },
+];
+
+function allowedEntry(attendees) {
+  let allowed = [];
+  let requiredAge = 18;
+
+  for (let y = 0; y < attendees.length; y++) {
+    let person = attendees[y];
+
+    if (
+      person.hasTicket &&
+      (person.age >= requiredAge || person.hasSpecialPermission)
+    ) {
+      allowed.push(person.name);
+    }
+  }
+  return allowed;
+}
+
+console.log(allowedEntry(attendees));

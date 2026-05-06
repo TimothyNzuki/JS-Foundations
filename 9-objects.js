@@ -89,5 +89,7 @@ console.log(products[1].features[2]);
 console.log(products);
 
 for (let p = 0; p < products.length; p++) {
-  console.log(`Product: ${products[p].name}, Price: ${products[p].price}`);
+  console.log(
+    `Product: ${products[p].name} - Price: ${products[p].price} - Features: ${products[p].features.join(",")}`,
+  );
 }
