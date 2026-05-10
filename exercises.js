@@ -394,3 +394,144 @@ function allowedEntry(attendees) {
 }
 
 console.log(allowedEntry(attendees));
+
+// FOR THE PROJECT CHECHPOINTS.
+
+// Reverse a String: Write a function that reverses a given string.
+// Method 1.
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+console.log(reverseString("Hello Myles!"));
+
+// Method 2.
+
+function reverseString2(str) {
+  let reversed = "";
+  for (i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+  return reversed;
+}
+console.log(reverseString2("Hello Myles!"));
+
+// Count Characters: Create a function that counts the number of characters in a string.
+
+function countCharacters(string) {
+  return string.length;
+}
+console.log(countCharacters("Hello Myles!"));
+
+// Method 2.
+
+const countCharacters1 = (string) => string.length;
+
+console.log(countCharacters1("Myles!"));
+
+// method 3.
+
+function countXracter(string) {
+  let count = 0;
+
+  for (i = 0; i < string.length; i++) {
+    count++;
+  }
+  return count;
+}
+
+console.log(countXracter("Nzuki!"));
+
+// Capitalize Words: Implement a function that capitalizes the first letter of each word in a sentence.
+
+function capitaliseFirstLetter(sentence) {
+  return sentence.charAt(0).toUpperCase() + sentence.slice(1);
+}
+
+console.log(capitaliseFirstLetter("myles is coding!"));
+
+function capitaliseSentence(sentence) {
+  return sentence
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+console.log(capitaliseSentence("The lord of the rings!"));
+
+// Find Maximum and Minimum: Write functions to find the maximum and minimum values in an array of numbers.
+
+function findMax(arr) {
+  return Math.max(...arr);
+}
+
+console.log(findMax([1, 3, 9, 50, 2, 10]));
+
+function findMin(arr) {
+  let min = arr[0];
+
+  for (i = 0; i < arr.length; i++) {
+    if (arr[1] < min) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+console.log(findMin([300, 30, 250, 10]));
+
+// Sum of Array: Create a function that calculates the sum of all elements in an array.
+
+function findSum(add) {
+  let sum = 0;
+  for (let i = 0; i < add.length; i++) {
+    sum += add[i];
+  }
+  return sum;
+}
+
+console.log(findSum([3, 5, 2, 5]));
+
+// Filter Array: Implement a function that filters out elements from an array based on a given condition
+
+function filter(arr) {
+  return arr.filter((word) => word.length <= 3);
+}
+console.log(filter(["Mark", "Junior", "Philip", "Tom"]));
+
+// Factorial: Write a function to calculate the factorial of a given number
+
+function factorial(n) {
+  if (n < 0) return "Factorial not defined for negative numbers";
+
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  return result;
+}
+
+console.log(factorial(5));
+
+// Prime Number Check: Create a function to check if a number is prime or not.
+
+function isPrimeNumber(number) {
+  if (number <= 1) return false;
+  for (let i = 2; i < number; i++) {
+    if (number % i === 0) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(isPrimeNumber(7));
+console.log(isPrimeNumber(12));
+
+// Fibonacci Sequence: Implement a function to generate the Fibonacci sequence up to a given number of terms. (search on the net )
+
+function fibonacciSequence(n) {
+  let fib = [0, 1];
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i - 1] + fib[i - 2];
+  }
+  return fib.slice(0, n);
+}
+console.log(fibonacciSequence(20));
