@@ -535,3 +535,23 @@ function fibonacciSequence(n) {
   return fib.slice(0, n);
 }
 console.log(fibonacciSequence(20));
+
+// THE WORLD OF DOM!
+
+/**1.  Dynamic Student List Manager*
+
+You are building a simple interface for managing a class list.
+
+Problem Statement:
+Create a web page with:
+
+- An input field for entering a student’s name
+- An "Add Student" button
+- An empty list displayed on the page
+
+Requirements:
+
+- When the button is clicked, the student’s name should be added as a new list item (<li>) in the list
+- Each list item must include an "X" button
+- Clicking "X" should delete that specific student from the list
+- Prevent adding empty names*/
