@@ -1,4 +1,4 @@
-const title = document.getElementById("title");
+/*const title = document.getElementById("title");
 title.style.color = "blue";
 
 const message = document.getElementsByClassName("message");
@@ -73,4 +73,90 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     alert("You pressed Enter");
   }
+});*/
+
+const title2 = document.getElementById("Class-list");
+title2.style.color = "blue";
+title2.style.fontSize = "30px";
+
+title2.addEventListener("mouseover", () => {
+  title2.style.backgroundColor = "gray";
 });
+title2.addEventListener("mouseout", () => {
+  title2.style.backgroundColor = "white";
+});
+
+const input = document.getElementById("student-list");
+const button = document.getElementById("button-submit");
+const list = document.getElementById("empty-list");
+
+/*button.addEventListener("click", () => {
+  const name = input.value.trim();
+
+  if (name === "") {
+    alert("Please Enter Student Name!");
+    return;
+  }
+
+  const li = document.createElement("li");
+  li.innerText = name;
+
+  const deletebutton = document.createElement("button");
+  deletebutton.innerText = "x";
+  deletebutton.style.fontSize = "10px";
+
+  deletebutton.addEventListener("click", () => {
+    list.removeChild(li);
+  });
+
+  li.appendChild(deletebutton);
+
+  list.appendChild(li);
+
+  input.value = "";
+});*/
+
+// Loading students from  local storage.
+
+let students = JSON.parse(localStorage.getItem("students")) || [];
+renderList();
+
+// Add Student.
+
+button.addEventListener("click", () => {
+  const name = input.value.trim();
+
+  if (name === "") {
+    alert("Please enter student name!");
+    return;
+  }
+
+  students.push(name);
+  localStorage.setItem("students", JSON.stringify(students));
+  renderList();
+  input.value = "";
+});
+
+function renderList() {
+  list.innerHTML = "";
+
+  students.forEach((student, index) => {
+    const li = document.createElement("li");
+    li.innerText = student;
+
+    const deleteBtn = document.createElement("button");
+    deleteBtn.innerText = "x";
+    deleteBtn.style.marginLeft = "10px";
+    deleteBtn.style.fontSize = "10px";
+
+    deleteBtn.addEventListener("click", () => {
+      students.splice(index, 1);
+      localStorage.setItem("students", JSON.stringify(students));
+      renderList();
+    });
+
+    li.appendChild(deleteBtn);
+
+    list.appendChild(li);
+  });
+}
