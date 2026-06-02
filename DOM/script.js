@@ -73,7 +73,7 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     alert("You pressed Enter");
   }
-});*/
+});
 
 const title2 = document.getElementById("Class-list");
 title2.style.color = "blue";
@@ -114,7 +114,7 @@ const list = document.getElementById("empty-list");
   list.appendChild(li);
 
   input.value = "";
-});*/
+});
 
 // Loading students from  local storage.
 
@@ -158,5 +158,29 @@ function renderList() {
     li.appendChild(deleteBtn);
 
     list.appendChild(li);
+
+    button.style.overscroll
   });
-}
+}*/
+
+// MANIPULATION OF THE SEARCH BOX.
+
+const title = document.getElementById("search-Title");
+const input = document.getElementById("search-Bar");
+const event = document.getElementById("unordered-List");
+const eventList = event.getElementsByTagName("li");
+
+input.addEventListener("input", () => {
+  const query = input.value.toLowerCase();
+
+  for (let i = 0; i < eventList.length; i++) {
+    const items = eventList[i];
+    const text = items.textContent.toLowerCase();
+
+    if (text.includes(query)) {
+      items.style.display = "";
+    } else {
+      items.style.display = "none";
+    }
+  }
+});

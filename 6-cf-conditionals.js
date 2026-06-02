@@ -4,7 +4,24 @@
 
 //const { use } = require("react");
 
-// 1. IF/ElSE statement:
+/* 1. IF Statement
+ if (condition){
+ code to be executed when the condition is truthy.
+}*/
+
+const Age = 30;
+
+if (Age >= 20) {
+  console.log("You are an adult");
+}
+
+/* 2. IF/ElSE statement:
+if (condition) {
+code to be executed when the condition is truthy.
+} else {
+  condition to be executed
+  }*/
+
 let age = 20;
 
 if (age >= 18) {
@@ -13,7 +30,16 @@ if (age >= 18) {
   console.log("You are not an adult.");
 }
 
-// 2. ELSE IF statement:
+/* 3.IF....ELSE IF statement:
+
+if (condition 1) {
+code to be executed if the  condition is truthy.
+} else if(condition 2){
+ code to be executed if the condition is truthy.
+} else {
+ code to be executed when the condition is truthy.
+}*/
+
 let score = 90;
 
 if (score >= 95) {
@@ -37,7 +63,7 @@ if (weight >= 90) {
   console.log("You are underweight");
 }
 
-// 3. SWITCH.
+// 4. SWITCH.
 // It is usefull when checking one value against many possible values.
 // The ELSE IF statement can become to hard to track and read. Thats why we use the switch.
 
@@ -81,8 +107,8 @@ switch (day) {
 
 // Truthy and Falsy values in JavaScript:
 // JS considers values as either truthy or falsy when they are being evaluated.
-// False values: false, 0,  "", null, undefined, NaN
-// True values: true, any number apart from 0, any non-empty string, objects, arrays.
+// Falsy values: false, 0,  ""(empty string), null, undefined, NaN
+// Truthy values: true, any number apart from 0, any non-empty string, objects, arrays.
 
 if ("hello") {
   console.log("This is a truthy value");
