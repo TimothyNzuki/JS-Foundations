@@ -193,3 +193,31 @@ if (isStudent && !isEmployed) {
 } else {
   console.log(`No discount for you`);
 }
+
+let age2 = 19;
+
+if (age2 >= 20) {
+  console.log("John Wick");
+} else if (age2 >= 15) {
+  console.log("MAry Jane");
+} else if (age2 >= 10) {
+  console.log("Myles Morales");
+} else {
+  console.log("Peter Parker");
+}
+
+let age = 19;
+
+switch (true) {
+  case age >= 20:
+    console.log("John Wick");
+    break;
+  case age >= 15:
+    console.log("Mary Jane");
+    break;
+  case age >= 10:
+    console.log("Myles Morales");
+    break;
+  default:
+    console.log("Peter Parker");
+}
