@@ -13,9 +13,14 @@ for (initialization; condition; increment/decrement) {
 */
 // Example of a for loop that prints number of steps taken from 1 to 5:
 
-for (let i = 1; i <= 5; i++) {
+console.log("loops");
+
+console.log(i);
+
+for (var i = 1; i <= 5; i++) {
   console.log(`Step ${i}`);
 }
+console.log(i);
 
 // 2. While loop
 // It is mainly used when does not know exaclty how many times the code of block will be executed.
