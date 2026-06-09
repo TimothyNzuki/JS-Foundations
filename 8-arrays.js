@@ -92,3 +92,85 @@ for (let student of students) {
 }
 
 console.log(`The totalnumber of students in the array is: ${students.length}`);
+
+// ARRAY METHODS.
+
+// Adding items in array.
+// 1. .push()
+// This is an array method that help programers add an item at the end of an array.
+
+let fruits2 = ["bannanas", "Oranges", "Apples", "Avocados"];
+fruits2.push("Lemon");
+console.log(fruits2);
+
+// 2. .unshift()
+// This array method adds items at the START of the array.
+
+let balls = ["busketball", "volleyball", "football"];
+balls.unshift("rujiball");
+console.log(balls);
+
+// Removing items in an array.
+// 1. .pop
+// This array method removes an item  at the END of an array.
+
+let kitchenItems = ["cup", "spoon", "plate", "jag", "oven", "fridge"];
+kitchenItems.pop();
+console.log(kitchenItems);
+
+// 2. .unshift
+// It's an array ,methos that removes an item at the START of an array.
+
+kitchenItems.shift();
+console.log(kitchenItems);
+
+// .splice
+// this is an array item that is used to udate items in an array.
+// It can remove an item, add an item and remove and add an item at a go.
+
+// The syntax is:
+// array.splice(start, deleteCount, item1, item2)
+// START is the index where the action will begin.
+// DELETECOUNT is the number of item(s) to be removed.
+// The ITEMS is the thind to be replaced where an item was removed.
+
+let instructors = ["Mark", "Andre", "Pete", "Mellisa"];
+instructors.splice(1, 1); // Removes "Andre" from the list.
+console.log(instructors);
+
+instructors.splice(1, 0, "Collins"); // Adds "Collins" to the list at index 1 without removing anyone.
+console.log(instructors);
+
+instructors.splice(2, 1, "Charity"); // At index 2, 1 item will be removed and "Charity will replace that item that has been removed."
+console.log(instructors);
+
+// The .sort method.
+// It's a method that help programmers to  sort things especially in when it comes to data.
+// It arrange elements in an array.
+// By default it sorts the elements as strings in an ascending order. This is called lexicographical order
+
+// The syntax is:
+// array.sort(compare function)
+
+let names = ["Felix", "Sheilla", "Soniah", "Manoah", "Thomas"];
+names.sort(); // This will sort the elements in the array in an alphabetical order.
+console.log(names);
+
+// The part of the compare function is mostly used when there are numerical orders in the array.
+// It hepls the programers tell the program how to arrange the elements.
+
+let scores = [10, 30, 15, 5, 20, 70, 65, 35, 55];
+scores.sort((a, b) => a - b); // This compare function will make the elements to be arranged in an ascending order.
+console.log(scores);
+
+scores.sort((a, b) => b - a); // This will make  the elements in the array to be arranged in a descending order.
+console.log(scores);
+
+// Explanation of ((a, b) => a-b);
+// If the result of (a-b) is positive, a comes after b. If the result is negative, a comes before b.
+
+// Ascending Order.
+// 10 - 30 = -20. // 10 will be placed before 30 in the arrangement.
+// 30 - 15 = 15. // The resu;t is positive. 30 will be placed after 15 in the list arrangement.
+
+// For descending order it will be the opposite of the above explanation.
